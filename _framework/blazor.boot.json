@@ -107,7 +107,6 @@
       "ContactBarWeb.wasm": "sha256-HN3GguTv4zVJwEC9dDGZq5eUn5MQr70oj2rwDCvN0Eo="
     }
   },
-  "cacheBootResources": true,
   "debugLevel": 0,
   "linkerEnabled": true,
   "globalizationMode": "sharded",
