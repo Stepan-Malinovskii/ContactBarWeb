@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ContactBarWeb",
   "resources": {
-    "hash": "sha256-wBXRTZcYBazji+1dL/3N4cXextdfB9QdmCNTiuNaoX4=",
+    "hash": "sha256-hygUhrzDUPK7E7llDErv9krkMooSN4Am67356862jIM=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-D0bzod5lwwSzPR43JC8TTCcZKw+3jIHOk8CZFCRj5is="
     },
@@ -104,7 +104,7 @@
       "System.wasm": "sha256-9DLmgOsnmEbjuZrRVFruRmVRvh/skjCDv6hQMjVZ3K8=",
       "netstandard.wasm": "sha256-tJ61C7Kz8JwAFXFpIkjHPNLoTraoGT18prOwy1i1xgw=",
       "System.Private.CoreLib.wasm": "sha256-fnDy4HZeIH9R/B6ZPk68+y59cCgM8W5r3KHIuA9CM1Y=",
-      "ContactBarWeb.wasm": "sha256-dbDlYe1w0HG2lcPdcoNaZmjnYyHND6eZK4Q/ShIqICQ="
+      "ContactBarWeb.wasm": "sha256-18Mt6OAqS3LcJbroBDnRNSHy5gFBD8mm3b4Gst61yBE="
     }
   },
   "debugLevel": 0,
