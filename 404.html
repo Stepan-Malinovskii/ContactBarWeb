@@ -4,10 +4,15 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-        window.location.href = '/ContactBarWeb/';
+        var path = window.location.pathname;
+        if (path.startsWith('/drink/')) {
+            window.location.href = '/ContactBarWeb/#redirect=' + path;
+        } else {
+            window.location.href = '/ContactBarWeb/';
+        }
     </script>
 </head>
 <body>
-    <p>Redirecting... <a href="/ContactBarWeb/">Click here if not redirected</a></p>
+    <p>Redirecting... <a href="/ContactBarWeb/">Click here</a></p>
 </body>
 </html>
