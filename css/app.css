@@ -1045,3 +1045,8 @@
         color: #FF6B00;
         font-size: 1.1rem;
     }
+
+/* Скрываем стандартное сообщение об ошибке Blazor */
+#blazor-error-ui {
+    display: none !important;
+}
