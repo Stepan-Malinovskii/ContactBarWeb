@@ -56,6 +56,39 @@
         <a class="dismiss">🗙</a>
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
+
+    <script>
+        // Агрессивно скрываем элементы загрузки
+        document.addEventListener('DOMContentLoaded', function () {
+            // Скрываем сразу при загрузке
+            var elementsToHide = [
+                '.loading-progress',
+                '.loading-progress-text',
+                'svg',
+                '#blazor-error-ui'
+            ];
+
+            elementsToHide.forEach(function (selector) {
+                var elements = document.querySelectorAll(selector);
+                elements.forEach(function (el) {
+                    el.style.display = 'none';
+                    el.style.visibility = 'hidden';
+                });
+            });
+
+            // Делаем фон черным
+            document.body.style.backgroundColor = '#000000';
+            document.getElementById('app').style.backgroundColor = '#000000';
+        });
+
+        // Дополнительно скрываем после загрузки Blazor
+        window.addEventListener('load', function () {
+            document.querySelectorAll('svg, circle').forEach(function (el) {
+                el.style.display = 'none';
+            });
+        });
+    </script>
+
 </body>
 
 </html>
