@@ -1051,34 +1051,34 @@
     display: none !important;
 }
 
-/* Делаем всю страницу черной и убираем элементы загрузки */
+/* УБИРАЕМ ВСЕ ЭЛЕМЕНТЫ ЗАГРУЗКИ */
 body {
     background-color: #000000 !important;
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     height: 100vh;
-    overflow: hidden;
 }
 
-/* Скрываем стандартное сообщение об ошибке Blazor */
-#blazor-error-ui {
-    display: none !important;
-}
-
-/* Скрываем индикатор загрузки (черный круг) */
+#blazor-error-ui,
 .loading-progress,
-.loading-progress-text {
+.loading-progress-text,
+svg.loading-progress,
+circle {
     display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
 }
 
-/* Скрываем все SVG элементы загрузки */
-svg.loading-progress {
-    display: none !important;
-}
-
-/* Делаем основной контейнер черным */
 #app {
-    background-color: #000000;
-    height: 100vh;
-    width: 100vw;
+    background-color: #000000 !important;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Скрываем всё что связано с загрузкой */
+[class*="loading"],
+[class*="progress"] {
+    display: none !important;
 }

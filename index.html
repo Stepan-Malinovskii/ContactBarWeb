@@ -10,6 +10,35 @@
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
     <link href="ContactBarWeb.styles.css" rel="stylesheet" />
+
+    <style>
+        /* АГРЕССИВНОЕ СКРЫТИЕ ВСЕХ ЭЛЕМЕНТОВ ЗАГРУЗКИ */
+        body {
+            background-color: #000000 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        #blazor-error-ui,
+        .loading-progress,
+        .loading-progress-text,
+        svg.loading-progress,
+        circle {
+            display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+        }
+
+        #app {
+            background-color: #000000 !important;
+            min-height: 100vh !important;
+        }
+
+            /* Скрываем всё до загрузки Blazor */
+            #app:empty {
+                background: #000000 !important;
+            }
+    </style>
 </head>
 
 <body>
