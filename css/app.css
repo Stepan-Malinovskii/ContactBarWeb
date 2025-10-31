@@ -1082,3 +1082,130 @@ circle {
 [class*="progress"] {
     display: none !important;
 }
+
+/* ÀÄÀÏÒÈÂÍÛÅ ÇÂÅÇÄÛ ĞÅÉÒÈÍÃÀ */
+.rating-stars-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.stars-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 15px 0;
+    flex-wrap: wrap;
+}
+
+.star {
+    font-size: 3rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+    .star.filled {
+        color: #FFD700;
+        text-shadow: 0 0 20px #FFD700, 0 0 30px #FFA500;
+    }
+
+    .star:hover {
+        transform: scale(1.1);
+    }
+
+.rating-text {
+    font-size: 1.1rem;
+    color: #FFD700;
+    margin-top: 10px;
+    text-shadow: 0 0 10px rgba(255,215,0,0.5);
+}
+
+/* ÌÎÁÈËÜÍÛÅ ÑÒÈËÈ */
+@media (max-width: 768px) {
+    .stars-container {
+        gap: 4px;
+        margin: 10px 0;
+    }
+
+    .star {
+        font-size: 2.5rem;
+        min-width: 50px;
+    }
+
+    .rating-stars-section h2 {
+        font-size: 1.3rem;
+    }
+
+    .rating-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .stars-container {
+        gap: 2px;
+    }
+
+    .star {
+        font-size: 2rem;
+        min-width: 40px;
+    }
+
+    .rating-stars-section h2 {
+        font-size: 1.1rem;
+    }
+
+    .rating-text {
+        font-size: 0.9rem;
+    }
+}
+
+/* Î÷åíü ìàëåíüêèå ıêğàíû */
+@media (max-width: 360px) {
+    .star {
+        font-size: 1.8rem;
+        min-width: 35px;
+    }
+
+    .stars-container {
+        gap: 1px;
+    }
+}
+
+/* ÀÄÀÏÒÈÂÍÛÉ ÊÎÍÒÅÉÍÅĞ ÄËß ÑÒĞÀÍÈÖÛ ÎÒÇÛÂÀ */
+.review-page-card {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+@media (max-width: 768px) {
+    .review-page-card {
+        padding: 10px;
+    }
+
+    .review-drink-name h1 {
+        font-size: 1.5rem;
+    }
+
+    .review-subtitle {
+        font-size: 0.9rem;
+    }
+}
+
+/* ÀÄÀÏÒÈÂÍÛÅ ÑÅÊÖÈÈ */
+.bar-selection-section,
+.comment-section,
+.submit-section {
+    margin: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .bar-selection-section,
+    .comment-section,
+    .submit-section {
+        margin: 15px 0;
+    }
+}
