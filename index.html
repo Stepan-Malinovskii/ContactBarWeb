@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ContactBarWeb</title>
-    <base href="ContactBarWeb" />
+    <base href="ContactBarWeb/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -28,5 +28,21 @@
     </div>
     <script src="_framework/blazor.webassembly.js"></script>
 </body>
+
+<script>
+    // Обработка SPA маршрутизации для GitHub Pages
+    (function () {
+        var path = window.location.search.match(/[?&]p=([^&]+)/);
+        if (path) {
+            var segments = path[1].split('/');
+            var segmentCount = parseInt(segments[0]) || 0;
+            var pathname = segments.slice(1).join('/');
+
+            if (segmentCount > 0 && pathname) {
+                history.replaceState(null, '', '/' + pathname + window.location.hash);
+            }
+        }
+    })();
+</script>
 
 </html>
