@@ -1,0 +1,1047 @@
+/* Космический фон и анимации */
+.cosmos-container {
+    background: #000000;
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Анимированные звезды - БОЛЬШЕ и БЫСТРЕЕ */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    pointer-events: none;
+}
+
+    .stars::before {
+        content: '';
+        position: absolute;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(0deg, transparent, rgba(255,255,255,0.1), transparent);
+        animation: stars-animation 12s linear infinite;
+    }
+
+.stars-2::before {
+    animation: stars-animation 8s linear infinite;
+    background: linear-gradient(0deg, transparent, rgba(255,255,255,0.05), transparent);
+}
+
+.stars-3::before {
+    animation: stars-animation 15s linear infinite;
+    background: linear-gradient(0deg, transparent, rgba(255,255,255,0.03), transparent);
+}
+
+@keyframes stars-animation {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* МНОГО разноцветных звезд-точек */
+.stars::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+    /* Белые звезды - БОЛЬШЕ */
+    radial-gradient(2px 2px at 20px 30px, #eee, transparent), radial-gradient(1px 1px at 40px 70px, rgba(255,255,255,0.9), transparent), radial-gradient(1px 1px at 60px 20px, #fff, transparent), radial-gradient(2px 2px at 80px 50px, rgba(255,255,255,0.8), transparent), radial-gradient(1px 1px at 100px 80px, #eee, transparent), radial-gradient(2px 2px at 120px 40px, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 140px 90px, #fff, transparent), radial-gradient(2px 2px at 160px 60px, rgba(255,255,255,0.6), transparent),
+    /* Желтые звезды - БОЛЬШЕ */
+    radial-gradient(2px 2px at 30px 120px, #FFD700, transparent), radial-gradient(1px 1px at 50px 150px, rgba(255, 215, 0, 0.9), transparent), radial-gradient(2px 2px at 70px 180px, #FFEB3B, transparent), radial-gradient(1px 1px at 90px 140px, rgba(255, 235, 59, 0.8), transparent), radial-gradient(2px 2px at 110px 160px, #FFC107, transparent), radial-gradient(1px 1px at 130px 130px, rgba(255, 193, 7, 0.7), transparent),
+    /* Оранжевые звезды - БОЛЬШЕ */
+    radial-gradient(2px 2px at 40px 200px, #FF9800, transparent), radial-gradient(1px 1px at 60px 230px, rgba(255, 152, 0, 0.9), transparent), radial-gradient(2px 2px at 80px 260px, #FF5722, transparent), radial-gradient(1px 1px at 100px 220px, rgba(255, 87, 34, 0.8), transparent), radial-gradient(2px 2px at 120px 240px, #E65100, transparent), radial-gradient(1px 1px at 140px 210px, rgba(230, 81, 0, 0.7), transparent),
+    /* Голубые звезды - БОЛЬШЕ */
+    radial-gradient(2px 2px at 50px 60px, #03A9F4, transparent), radial-gradient(1px 1px at 70px 100px, rgba(3, 169, 244, 0.9), transparent), radial-gradient(2px 2px at 90px 40px, #00BCD4, transparent), radial-gradient(1px 1px at 110px 80px, rgba(0, 188, 212, 0.8), transparent), radial-gradient(2px 2px at 130px 120px, #29B6F6, transparent), radial-gradient(1px 1px at 150px 70px, rgba(41, 182, 246, 0.7), transparent);
+    background-repeat: repeat;
+    background-size: 300px 300px;
+    animation: stars-move 30s linear infinite;
+}
+
+.stars-2::after {
+    background-image:
+    /* Дополнительные белые звезды */
+    radial-gradient(1px 1px at 180px 160px, rgba(255,255,255,0.7), transparent), radial-gradient(2px 2px at 200px 190px, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 220px 140px, rgba(255,255,255,0.6), transparent), radial-gradient(2px 2px at 240px 170px, rgba(255,255,255,0.4), transparent),
+    /* Дополнительные желтые звезды */
+    radial-gradient(2px 2px at 160px 240px, #FFD54F, transparent), radial-gradient(1px 1px at 180px 270px, rgba(255, 213, 79, 0.8), transparent), radial-gradient(2px 2px at 200px 220px, #FFF59D, transparent),
+    /* Дополнительные оранжевые звезды */
+    radial-gradient(1px 1px at 220px 280px, #FF9800, transparent), radial-gradient(2px 2px at 240px 250px, rgba(255, 152, 0, 0.7), transparent), radial-gradient(1px 1px at 260px 290px, #F57C00, transparent),
+    /* Дополнительные голубые звезды */
+    radial-gradient(2px 2px at 280px 180px, #4FC3F7, transparent), radial-gradient(1px 1px at 300px 210px, rgba(79, 195, 247, 0.8), transparent), radial-gradient(2px 2px at 320px 150px, #81D4FA, transparent);
+    animation: stars-move 20s linear infinite;
+    background-size: 400px 400px;
+}
+
+.stars-3::after {
+    background-image:
+    /* Еще больше звезд */
+    radial-gradient(1px 1px at 260px 320px, rgba(255,255,255,0.4), transparent), radial-gradient(2px 2px at 280px 350px, rgba(255,255,255,0.3), transparent), radial-gradient(1px 1px at 300px 310px, rgba(255,255,255,0.5), transparent), radial-gradient(2px 2px at 320px 340px, #FFEB3B, transparent), radial-gradient(1px 1px at 340px 370px, rgba(255, 235, 59, 0.6), transparent), radial-gradient(1px 1px at 360px 330px, #FF9800, transparent), radial-gradient(2px 2px at 380px 360px, rgba(255, 152, 0, 0.5), transparent), radial-gradient(1px 1px at 400px 290px, #03A9F4, transparent), radial-gradient(2px 2px at 420px 320px, rgba(3, 169, 244, 0.6), transparent);
+    animation: stars-move 25s linear infinite;
+    background-size: 500px 500px;
+}
+
+@keyframes stars-move {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-500px);
+    }
+}
+
+/* Контент поверх звезд */
+.content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+/* Стили для текста с тенью как на фото */
+.cosmic-title {
+    color: #ffffff;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #FF6B00, 4px 4px 0px rgba(255, 107, 0, 0.5), 6px 6px 0px rgba(255, 107, 0, 0.3);
+    margin-bottom: 2rem;
+}
+
+.cosmic-text {
+    color: #ffffff !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.cosmic-text-muted {
+    color: rgba(255,255,255,0.7) !important;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* ГРУППЫ КАТЕГОРИЙ - ПРЯМЫЕ (вертикальные) */
+.cosmic-card {
+    background: linear-gradient(135deg, #FF6B00, #FF8C00, #FFA500) !important;
+    backdrop-filter: blur(10px);
+    border: none !important;
+    border-radius: 15px;
+    transform: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+    .cosmic-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(255, 107, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+.cosmic-card-header {
+    background: transparent !important;
+    border: none !important;
+    padding: 0;
+}
+
+/* КНОПКИ КАТЕГОРИЙ - ПРЯМЫЕ */
+.cosmic-btn {
+    color: #ffffff !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 20px 25px;
+    transform: none;
+    text-align: left;
+    transition: all 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    letter-spacing: 1px;
+    width: 100%;
+}
+
+    .cosmic-btn:hover {
+        background: rgba(255, 255, 255, 0.15) !important;
+        transform: translateX(8px);
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+
+.cosmic-card .d-flex {
+    transform: none;
+}
+
+/* Стрелки */
+.cosmic-arrow {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-size: 1.2em;
+}
+
+/* КНОПКИ НАПИТКОВ - НАКЛОННЫЕ ЧЕРНЫЕ */
+.cosmic-list-item {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d, #1a1a1a) !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+    transform: skewX(-8deg);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    margin: 5px 10px;
+    /* УБИРАЕМ СКРУГЛЕНИЯ */
+    border-radius: 0 !important;
+    padding: 15px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+    .cosmic-list-item:hover {
+        background: linear-gradient(135deg, #2d2d2d, #3d3d3d, #2d2d2d) !important;
+        transform: skewX(-8deg) translateX(8px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .cosmic-list-item:last-child {
+        border-bottom: none !important;
+    }
+
+/* Выравниваем текст внутри наклонных кнопок напитков */
+.drink-name {
+    transform: skewX(8deg);
+    display: block;
+    font-weight: 600;
+}
+
+.cosmic-rating {
+    transform: skewX(8deg);
+    background: linear-gradient(45deg, #FF6B00, #FF8C00, #FFA500) !important;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 0 3px 12px rgba(255, 107, 0, 0.4);
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Списки */
+.cosmic-list {
+    background: transparent !important;
+    backdrop-filter: none;
+    transform: none;
+    margin: 10px 0;
+    border-radius: 0;
+}
+
+/* Спиннер */
+.cosmic-spinner {
+    border-color: rgba(255,255,255,0.5) !important;
+    border-right-color: transparent !important;
+}
+
+/* Алерты */
+.cosmic-alert {
+    background: linear-gradient(135deg, #FF6B00, #FF8C00) !important;
+    backdrop-filter: blur(10px);
+    border: none;
+    color: #ffffff;
+    border-radius: 10px;
+    transform: skewX(-3deg);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 20px rgba(255, 107, 0, 0.4);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .cosmic-list-item {
+        transform: skewX(-5deg);
+        margin: 3px 5px;
+        padding: 12px 15px;
+    }
+
+    .drink-name {
+        transform: skewX(5deg);
+    }
+
+    .cosmic-rating {
+        transform: skewX(5deg);
+    }
+
+    .cosmic-list-item:hover {
+        transform: skewX(-5deg) translateX(5px);
+    }
+
+    .cosmic-btn:hover {
+        transform: translateX(5px);
+    }
+
+    .cosmic-card {
+        margin: 10px 0;
+    }
+
+    .cosmic-btn {
+        padding: 15px 20px;
+    }
+}
+
+/* Модальное окно напитка */
+.drink-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+}
+
+.drink-modal-content {
+    background: linear-gradient(135deg, #1a1a1a, #2d2d2d);
+    border: 2px solid rgba(255, 107, 0, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: rgba(255, 107, 0, 0.2);
+    border: 2px solid rgba(255, 107, 0, 0.5);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .close-btn:hover {
+        background: rgba(255, 107, 0, 0.4);
+        border-color: rgba(255, 107, 0, 0.8);
+        transform: scale(1.1);
+    }
+
+/* Название напитка */
+.drink-name-section {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(255, 107, 0, 0.3);
+}
+
+.drink-title {
+    color: #ffffff;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px #FF6B00, 4px 4px 0px rgba(255, 107, 0, 0.5);
+    margin: 0;
+}
+
+/* Рейтинг */
+.drink-rating-section {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.rating-badge-large {
+    background: linear-gradient(45deg, #FF6B00, #FF8C00, #FFA500);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    display: inline-block;
+    box-shadow: 0 5px 20px rgba(255, 107, 0, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Комментарии */
+.comments-section {
+    margin-top: 30px;
+}
+
+.comments-title {
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comment-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 107, 0, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+    .comment-card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(255, 107, 0, 0.4);
+        transform: translateY(-2px);
+    }
+
+.comment-text {
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.comment-author {
+    color: rgba(255, 107, 0, 0.8);
+    font-size: 0.9rem;
+    font-style: italic;
+    text-align: right;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 107, 0, 0.2);
+    padding-top: 10px;
+}
+
+.no-comments {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 40px 20px;
+}
+
+    .no-comments p {
+        margin: 10px 0;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+
+.text-muted {
+    color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* Анимации */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .drink-modal-content {
+        padding: 30px 20px;
+        width: 95%;
+    }
+
+    .drink-title {
+        font-size: 2rem;
+    }
+
+    .rating-badge-large {
+        font-size: 1.1rem;
+        padding: 10px 25px;
+    }
+
+    .comment-card {
+        padding: 15px;
+    }
+}
+
+/* Кнопка добавления отзыва */
+.add-review-section {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px 0;
+    border-top: 2px solid rgba(255, 107, 0, 0.2);
+    border-bottom: 2px solid rgba(255, 107, 0, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.add-review-btn {
+    background: linear-gradient(45deg, #FF6B00, #FF8C00, #FFA500);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(255, 107, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+    .add-review-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(255, 107, 0, 0.6);
+    }
+
+/* Кнопка назад */
+.back-btn {
+    background: linear-gradient(45deg, #FF6B00, #FF8C00);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(255, 107, 0, 0.3);
+}
+
+    .back-btn:hover {
+        transform: translateX(-5px);
+        box-shadow: 0 6px 20px rgba(255, 107, 0, 0.5);
+    }
+
+/* Карточка деталей напитка */
+.drink-detail-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 107, 0, 0.3);
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Страница добавления отзыва */
+.review-page-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 3px solid rgba(255, 107, 0, 0.3);
+    border-radius: 25px;
+    padding: 50px;
+    margin-top: 20px;
+    box-shadow: 0 25px 70px rgba(255, 107, 0, 0.2);
+}
+
+.review-drink-name {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgba(255, 107, 0, 0.3);
+}
+
+    .review-drink-name h1 {
+        color: #ffffff;
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 0px #FF6B00, 4px 4px 0px rgba(255, 107, 0, 0.5);
+        margin: 0 0 10px 0;
+    }
+
+.review-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Секции */
+.rating-stars-section,
+.bar-selection-section,
+.comment-section {
+    margin: 40px 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+}
+
+    .rating-stars-section h2,
+    .bar-selection-section h2,
+    .comment-section h2 {
+        color: #ffffff;
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+/* Звезды рейтинга */
+.stars-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.star {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+    .star:hover {
+        transform: scale(1.3);
+        color: #FFD700;
+    }
+
+    .star.filled {
+        color: #FFD700;
+        text-shadow: 0 0 25px #FFD700, 0 0 15px rgba(255, 215, 0, 0.5);
+    }
+
+.rating-text {
+    color: #FFD700;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Поиск заведений */
+.search-input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid rgba(255, 107, 0, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+    .search-input:focus {
+        outline: none;
+        border-color: #FF6B00;
+        box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    .search-input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+.bars-list {
+    max-height: 300px;
+    overflow-y: auto;
+    border: 2px solid rgba(255, 107, 0, 0.2);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.bar-option {
+    padding: 18px 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+    .bar-option:hover {
+        background: rgba(255, 107, 0, 0.15);
+        transform: translateX(5px);
+    }
+
+    .bar-option.selected {
+        background: rgba(255, 107, 0, 0.3);
+        font-weight: 700;
+        border-left: 4px solid #FF6B00;
+    }
+
+    .bar-option:last-child {
+        border-bottom: none;
+    }
+
+.bar-address {
+    font-size: 1.1rem;
+}
+
+.no-bars {
+    padding: 30px 20px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* Поле комментария */
+.comment-textarea {
+    width: 100%;
+    padding: 20px;
+    border: 2px solid rgba(255, 107, 0, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 1.1rem;
+    resize: vertical;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    min-height: 150px;
+}
+
+    .comment-textarea:focus {
+        outline: none;
+        border-color: #FF6B00;
+        box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    .comment-textarea::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+    }
+
+.char-count {
+    text-align: right;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+/* Кнопка отправки */
+.submit-section {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px solid rgba(255, 107, 0, 0.3);
+}
+
+.submit-review-btn {
+    background: linear-gradient(45deg, #FF6B00, #FF8C00, #FFA500);
+    color: white;
+    border: none;
+    padding: 20px 60px;
+    border-radius: 30px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+    .submit-review-btn:hover:not(:disabled) {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 35px rgba(255, 107, 0, 0.6);
+    }
+
+    .submit-review-btn:disabled {
+        background: rgba(255, 255, 255, 0.1);
+        color: rgba(255, 255, 255, 0.3);
+        cursor: not-allowed;
+        box-shadow: none;
+        transform: none;
+    }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .review-page-card {
+        padding: 30px 20px;
+        margin: 10px;
+    }
+
+    .review-drink-name h1 {
+        font-size: 2rem;
+    }
+
+    .star {
+        font-size: 3rem;
+    }
+
+    .rating-stars-section,
+    .bar-selection-section,
+    .comment-section {
+        padding: 20px;
+        margin: 30px 0;
+    }
+
+    .submit-review-btn {
+        padding: 15px 40px;
+        font-size: 1.1rem;
+        width: 100%;
+    }
+}
+
+/* Галочка выбора */
+.check-mark {
+    color: #00FF00;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-left: auto;
+    text-shadow: 0 0 10px #00FF00;
+}
+
+/* Информация о выбранном заведении */
+.selected-bar-info {
+    background: rgba(0, 255, 0, 0.1);
+    border: 2px solid rgba(0, 255, 0, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    color: #00FF00;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Улучшенные стили для выбора заведения */
+.bar-option {
+    padding: 18px 20px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+    .bar-option:hover {
+        background: rgba(255, 107, 0, 0.2);
+        transform: translateX(5px);
+    }
+
+    .bar-option.selected {
+        background: rgba(0, 255, 0, 0.1);
+        border-left: 4px solid #00FF00;
+        font-weight: 700;
+    }
+
+/* Убедитесь что звезды работают правильно */
+.star {
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+    .star.filled {
+        color: #FFD700;
+        text-shadow: 0 0 25px #FFD700, 0 0 15px rgba(255, 215, 0, 0.5);
+    }
+
+/* Секция поиска */
+.search-section {
+    margin-bottom: 30px;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 15px 50px 15px 20px;
+    border: 2px solid rgba(255, 107, 0, 0.3);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+    .search-input:focus {
+        outline: none;
+        border-color: #FF6B00;
+        box-shadow: 0 0 20px rgba(255, 107, 0, 0.4);
+        background: rgba(255, 255, 255, 0.12);
+    }
+
+    .search-input::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+/* Кнопка очистки поиска */
+.clear-search {
+    position: absolute;
+    right: 15px;
+    background: rgba(255, 107, 0, 0.3);
+    border: none;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+    .clear-search:hover {
+        background: rgba(255, 107, 0, 0.6);
+        transform: scale(1.1);
+    }
+
+/* Стили для найденных напитков */
+.cosmic-list-item:not(.no-results) {
+    transition: all 0.3s ease;
+}
+
+.cosmic-list-item.highlight {
+    background: linear-gradient(135deg, #2d2d2d, #3d3d3d, #2d2d2d) !important;
+    border-left: 4px solid #FF6B00 !important;
+    transform: skewX(-8deg) translateX(5px);
+}
+
+/* Сообщение когда нет результатов */
+.no-results {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    font-style: italic;
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Счетчик результатов */
+.search-results-info {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+/* Анимация при поиске */
+@keyframes highlight {
+    0% {
+        background: rgba(255, 107, 0, 0.1);
+    }
+
+    100% {
+        background: transparent;
+    }
+}
+
+.highlight-animation {
+    animation: highlight 1s ease;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .search-input {
+        padding: 12px 45px 12px 15px;
+        font-size: 1rem;
+    }
+
+    .clear-search {
+        right: 12px;
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+    }
+}
+
+/* Бейдж поиска в заголовке категории */
+.search-badge {
+    background: rgba(255, 107, 0, 0.3);
+    border-radius: 50%;
+    padding: 2px 6px;
+    margin-left: 8px;
+    font-size: 0.8rem;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Счетчик результатов */
+.results-count {
+    background: linear-gradient(45deg, #FF6B00, #FF8C00);
+    color: white;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-right: 15px;
+    box-shadow: 0 2px 8px rgba(255, 107, 0, 0.3);
+}
+
+/* Подсветка категории с результатами поиска */
+.cosmic-card.has-results {
+    border: 2px solid rgba(255, 107, 0, 0.5) !important;
+    box-shadow: 0 0 20px rgba(255, 107, 0, 0.2) !important;
+}
+
+/* Общая статистика поиска */
+.search-summary {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 107, 0, 0.2);
+}
+
+    .search-summary strong {
+        color: #FF6B00;
+        font-size: 1.1rem;
+    }
